@@ -1,9 +1,23 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <ul class="nav navbar-nav">
-      <li class="active"><a routerLink="/index">index</a></li>
-      <li class="active"><a routerLink="/home">home</a></li>
-    </ul>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">
+        <span>Angular2 demos</span>
+      </a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active"><a routerLink="/home">home</a></li>
+        <li routerLinkActive="active"><a routerLink="/about">about</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 <router-outlet></router-outlet>
