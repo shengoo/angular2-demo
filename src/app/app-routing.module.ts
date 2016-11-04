@@ -14,7 +14,7 @@ import {About2Component} from './components/about/about2/about2.component';
 const routes: Routes = [
   {path: '', component: IndexComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent}//redirectTo: 'about/about1'
+  {path: 'about', component: AboutComponent  }//redirectTo: 'about/about1'
 ];
 
 const aboutRoutes: Routes = [
@@ -44,7 +44,8 @@ const aboutRoutes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    RouterModule.forChild(aboutRoutes)],
+    RouterModule.forChild(aboutRoutes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

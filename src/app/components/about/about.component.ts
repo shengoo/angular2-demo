@@ -8,12 +8,44 @@ import {About2Component} from './about2/about2.component';
   selector: 'about',
   templateUrl: 'about.component.html'
 })
-// RouterModule.forChild()
-// @RouteConfig([
-//   {path: '/', name: 'All', component: AboutComponent, useAsDefault: true},
-//   {path: '/about1', name: 'about1', component: About1Component},
-//   {path: '/about2', name: 'about2', component: About2Component}
-// ])
 export class AboutComponent {
+  code = `
+const routes: Routes = [
+  {path: '', component: IndexComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent  }
+];
 
+const aboutRoutes: Routes = [
+  {
+    path: 'about',
+    component: AboutComponent,
+    children: [
+      {
+        path: '',
+        children: [
+          {
+            path: 'about1',
+            component: About1Component
+          },
+          {
+            path: 'about2',
+            component: About2Component
+          }
+        ]
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+    RouterModule.forChild(aboutRoutes)
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {
+}
+  `;
 }
