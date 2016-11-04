@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
 
+import {IndexComponent} from './components/index/index.component';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
 import {About1Component} from './components/about/about1/about1.component';
@@ -11,9 +12,9 @@ import {About2Component} from './components/about/about2/about2.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', component: IndexComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent}//redirectTo: 'about/about1'
 ];
 
 const aboutRoutes: Routes = [
@@ -24,7 +25,7 @@ const aboutRoutes: Routes = [
       {
         path: '',
         // component: AboutComponent,
-        // redirectTo: '/about1',
+        // redirectTo: 'about1',
         children: [
           {
             path: 'about1',

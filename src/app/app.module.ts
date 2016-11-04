@@ -6,6 +6,7 @@ import {RouterModule}   from '@angular/router';
 
 import {AppRoutingModule} from './app-routing.module';
 
+import {IndexComponent} from './components/index/index.component';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
@@ -16,6 +17,7 @@ import {About2Component} from './components/about/about2/about2.component';
 @NgModule({
   declarations: [
     AppComponent,
+    IndexComponent,
     HomeComponent,
     AboutComponent,
     About1Component,
